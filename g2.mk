@@ -111,6 +111,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.sf.lcd_density=480 \
 	ro.opengles.version=196608
 
+PRODUCT_PACKAGES += \
+	bdAddrLoader
+
 # Audio Configuration
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.audio.handset.mic=digital \
