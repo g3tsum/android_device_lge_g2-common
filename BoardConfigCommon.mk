@@ -150,3 +150,5 @@ USE_SET_METADATA := false
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 TARGET_PROVIDES_LIBLIGHT := true
+
+BOARD_RIL_CLASS := ../../../device/lge/g2-common/ril/
