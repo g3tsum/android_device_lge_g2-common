@@ -39,7 +39,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/lge/g2-common/include
 
 # Kernel information
 BOARD_KERNEL_BASE     := 0x00000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=g2 user_debug=31 msm_rtb.filter=0x0 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=g2 user_debug=31 msm_rtb.filter=0x0
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x05000000 --tags_offset 0x04800000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -71,8 +71,10 @@ WIFI_DRIVER_FW_PATH_P2P     := "/system/etc/firmware/fw_bcmdhd_p2p.bin"
 BOARD_EGL_CFG := device/lge/g2-common/egl.cfg
 
 ## the main variant works... except for video scaling :(
-TARGET_QCOM_DISPLAY_VARIANT := mdss
+TARGET_QCOM_DISPLAY_VARIANT := caf
 USE_OPENGL_RENDERER := true
+VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 TARGET_USES_C2D_COMPOSITION := true
@@ -80,7 +82,7 @@ TARGET_USES_C2D_COMPOSITION := true
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP -DLG_CAMERA_HARDWARE -DLPA_DEFAULT_BUFFER_SIZE=512
-#TARGET_DISPLAY_USE_RETIRE_FENCE := true
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Needed for Camera
@@ -150,3 +152,13 @@ USE_SET_METADATA := false
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Shader cache config options
+# Maximum size of the  GLES Shaders that can be cached for reuse.
+# Increase the size if shaders of size greater than 12KB are used.
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+
+# Maximum GLES shader cache size for each app to store the compiled shader
+# binaries. Decrease the size if RAM or Flash Storage size is a limitation
+# of the device.
+MAX_EGL_CACHE_SIZE := 2048*1024
