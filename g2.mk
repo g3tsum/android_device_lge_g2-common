@@ -134,8 +134,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.mode_pref_nv10=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.telephony.ril_class=LgeLteRIL \
-	ro.telephony.default_cdma_sub=0 \
 	ro.telephony.ril.v3=qcomdsds
 
 # update 1x signal strength after 2s
