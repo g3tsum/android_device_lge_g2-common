@@ -7,7 +7,7 @@
     <item name="screen.full">165.83</item>
     <item name="wifi.on">1.78</item>
     <item name="wifi.active">109.64</item>
-    <item name="wifi.scan">64.62</item>
+    <item name="wifi.scan">75.48</item>
     <item name="dsp.audio">0.1</item>
     <item name="dsp.video">0.1</item>
     <item name="radio.active">70.79</item>
@@ -52,4 +52,12 @@
         <value>344.98</value>
     </array>
     <item name="battery.capacity">3000</item>
+
+    <array name="wifi.batchedscan"> <!-- mA.  Current figures based on .0801 s/c and 75.48mA while scanning -->
+        <value>.0076</value> <!-- 1-8/hr -->
+        <value>.0613</value>  <!-- 9-64/hr -->
+        <value>.4845</value>   <!-- 65-512/hr -->
+        <value>3.870</value>    <!-- 513-4096/hr -->
+        <value>30.96</value>   <!-- 4097-?/hr -->
+    </array>
 </device>
