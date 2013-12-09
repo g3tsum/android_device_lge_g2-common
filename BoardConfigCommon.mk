@@ -69,27 +69,24 @@ WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/fw_bcmdhd_apsta.bin"
 
 BOARD_EGL_CFG := device/lge/g2-common/egl.cfg
 
-## the main variant works... except for video scaling :(
-TARGET_QCOM_DISPLAY_VARIANT := mdss
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 TARGET_USES_C2D_COMPOSITION := true
-#TARGET_DISPLAY_USE_RETIRE_FENCE := true
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_USES_QCOM_BSP := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP -DLG_CAMERA_HARDWARE -DLPA_DEFAULT_BUFFER_SIZE=512
+#BOARD_USES_QCOM_HARDWARE := true
+#TARGET_USES_QCOM_BSP := true
+COMMON_GLOBAL_CFLAGS += -DLG_CAMERA_HARDWARE -DLPA_DEFAULT_BUFFER_SIZE=512
+#-DQCOM_HARDWARE -DQCOM_BSP 
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Audio
-TARGET_QCOM_AUDIO_VARIANT := caf
-#TARGET_USES_QCOM_COMPRESSED_AUDIO := true
+TARGET_USES_QCOM_COMPRESSED_AUDIO := true
 BOARD_HAVE_LOW_LATENCY_AUDIO := true
-BOARD_USES_LEGACY_ALSA_AUDIO := true
 
 RECOVERY_FSTAB_VERSION = 2
 TARGET_RECOVERY_FSTAB = device/lge/g2-common/fstab.g2
@@ -119,7 +116,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 BOARD_NFC_HAL_SUFFIX := g2
 
-#BOARD_RIL_CLASS := ../../../device/lge/g2-common/ril/
+BOARD_RIL_CLASS := ../../../device/lge/g2-common/ril/
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/g2-common/releasetools
 
 COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
@@ -145,3 +142,13 @@ SKIP_SET_METADATA := true
 
 # Flags
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+
+# Shader cache config options
+# Maximum size of the  GLES Shaders that can be cached for reuse.
+# Increase the size if shaders of size greater than 12KB are used.
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+
+# Maximum GLES shader cache size for each app to store the compiled shader
+# binaries. Decrease the size if RAM or Flash Storage size is a limitation
+# of the device.
+MAX_EGL_CACHE_SIZE := 2048*1024
