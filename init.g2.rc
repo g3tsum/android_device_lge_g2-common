@@ -5,8 +5,6 @@ on early-init
     write /sys/class/leds/lcd-backlight/brightness 150
 
 on init
-    chmod 0701 /mnt/media_rw
-    mkdir /mnt/media_rw/usbdisk 0775 system system
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
@@ -14,7 +12,6 @@ on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
     mkdir /firmware 0771 system system
-    mkdir /storage/usbdisk 0000 system system
     mkdir /factory 0775 system system
     mkdir /persist-lg 0755 system system
     mkdir /mpt 0755 system system
@@ -22,6 +19,11 @@ on init
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
+
+    # usb otg
+    mkdir /storage/usbdisk 0000 system system
+    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
+    mkdir /storage/usbdisk 0700 root root
 
     # Support legacy paths
     symlink /storage/emulated/legacy /sdcard
@@ -431,6 +433,6 @@ service time_daemon /system/bin/time_daemon
     user root
     group root
 
-service fuse_usb /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /storage/usbdisk
+service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
     disabled
