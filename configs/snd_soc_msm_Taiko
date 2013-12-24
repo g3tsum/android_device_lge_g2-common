@@ -5353,7 +5353,7 @@ SectionDevice
 		'SLIM RX1 MUX':0:AIF1_PB
 		'SLIM_0_RX Channels':0:One
 		'RX7 MIX1 INP1':0:RX1
-		'RX7 Digital Volume':1:67
+		'RX7 Digital Volume':1:64
 		'SPK DRV Volume':1:90
 		'SPK DAC Switch':1:1
 		'RX7 HPF cut off':0:MIN_3DB_150Hz
@@ -5443,8 +5443,8 @@ SectionDevice
 		'HPHL DAC Switch':1:1
 		'HPHL Volume':1:85
 		'HPHR Volume':1:85
-		'RX1 Digital Volume':1:58
-		'RX2 Digital Volume':1:58
+		'RX1 Digital Volume':1:67
+		'RX2 Digital Volume':1:67
 	EndSequence
 
 	DisableSequence
@@ -5482,8 +5482,8 @@ SectionDevice
 		'HPHL DAC Switch':1:1
 		'HPHL Volume':1:85
 		'HPHR Volume':1:85
-		'RX1 Digital Volume':1:54
-		'RX2 Digital Volume':1:54
+		'RX1 Digital Volume':1:67
+		'RX2 Digital Volume':1:67
 	EndSequence
 
 	DisableSequence
@@ -5522,8 +5522,8 @@ SectionDevice
 		'HPHL DAC Switch':1:1
 		'HPHL Volume':1:85
 		'HPHR Volume':1:85
-		'RX1 Digital Volume':1:54
-		'RX2 Digital Volume':1:54
+		'RX1 Digital Volume':1:67
+		'RX2 Digital Volume':1:67
 	EndSequence
 
 	DisableSequence
@@ -5562,8 +5562,8 @@ SectionDevice
 		'HPHL DAC Switch':1:1
 		'HPHL Volume':1:85
 		'HPHR Volume':1:85
-		'RX1 Digital Volume':1:54
-		'RX2 Digital Volume':1:54
+		'RX1 Digital Volume':1:67
+		'RX2 Digital Volume':1:67
 	EndSequence
 
 	DisableSequence
