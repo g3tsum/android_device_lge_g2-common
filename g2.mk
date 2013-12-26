@@ -186,6 +186,15 @@ PRODUCT_PACKAGES += \
 	audio.r_submix.default \
 	libaudio-resampler
 
+# Audio effects
+PRODUCT_PACKAGES += \
+	libqcomvisualizer \
+	libqcomvoiceprocessing \
+	libqcomvoiceprocessingdescriptors
+
+PRODUCT_COPY_FILES += \
+	device/lge/g2-common/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
 PRODUCT_PACKAGES += \
         libmm-omxcore \
 	libdivxdrmdecrypt \
