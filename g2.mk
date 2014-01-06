@@ -106,7 +106,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio Configuration
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.audio.fluence.voicecall=true \
 	persist.audio.dualmic.config=endfire \
 	af.resampler.quality=4
 

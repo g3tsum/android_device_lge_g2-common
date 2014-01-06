@@ -48,6 +48,7 @@ BOARD_CUSTOM_BOOTIMG_MK := device/lge/g2-common/releasetools/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/lge/msm8974
 
 BOARD_USES_ALSA_AUDIO:= true
+BOARD_HAVE_AUDIENCE_ES325_2MIC := true
 
 TARGET_BOOTLOADER_BOARD_NAME := galbi
 TARGET_BOARD_PLATFORM := msm8974
